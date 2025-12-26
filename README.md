@@ -16,6 +16,15 @@ their top songs of the year and celebrate music together 🎧✨
 - Option to Edit Form after submission
 - Responsive design (desktop + mobile)
 
+## 📸 Project Preview
+
+### Homepage
+![Homepage](assets/screenshots/homepage.png)
+### Countdown Timer
+![Countdown](assets/screenshots/countdown.png)
+### 3D Song Carousel
+![Carousel](assets/screenshots/carousel.png)
+
 ## 🛠 Tech Stack
 - HTML, CSS, JavaScript
 - Google Apps Script
