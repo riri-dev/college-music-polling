@@ -35,4 +35,5 @@ Built with ♡ by **@riri-dev**
 
 - GitHub: https://github.com/riri-dev
 - LinkedIn: https://www.linkedin.com/in/lahari-pedada-devv
+- LinkedIn: https://www.linkedin.com/in/lahari-pedada
 
