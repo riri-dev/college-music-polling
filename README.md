@@ -18,9 +18,15 @@ their top songs of the year and celebrate music together 🎧✨
 
 ## 📸 Project Preview
 
+# HomePage & CountDown Timer
+
 ![Homepage – Countdown](https://github.com/user-attachments/assets/2dbe2c0a-2865-4c8c-b7e6-1d40d0457132)
 
+# Music Wrap Form
+
 ![Poll Form](https://github.com/user-attachments/assets/ddd57abd-7a9d-49a8-80e2-17b2e98bae41)
+
+# Infinite Music Carousel 
 
 ![Carousel View](https://github.com/user-attachments/assets/75a01682-98ac-4b76-836d-07bd1b9270c5)
 
