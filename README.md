@@ -32,3 +32,7 @@ To run this project:
 
 ## 👩‍💻 Author
 Built with ♡ by **@riri-dev**
+
+- GitHub: https://github.com/riri-dev
+- LinkedIn: https://www.linkedin.com/in/lahari-pedada-devv
+
