@@ -1,5 +1,6 @@
 # college-music-polling
 A dynamic New Year music polling website for VMTW students 🎶 
+
 # 🎶 VMTW Music Wrapped 2025
 
 A dynamic New Year music poll website built for VMTW students to collect
@@ -9,20 +10,25 @@ their top songs of the year and celebrate music together 🎧✨
 - Live countdown to New Year 2026
 - Animated UI with confetti & glow effects
 - Infinite 3D-style music carousel
+- Linking music videos to Carousel
 - Google Sheets backend (via Apps Script)
 - Duplicate submission prevention (Roll No)
+- Option to Edit Form after submission
 - Responsive design (desktop + mobile)
 
 ## 🛠 Tech Stack
 - HTML, CSS, JavaScript
 - Google Apps Script
 - Google Sheets
+- Cloudinary
 
 ## 🔐 Security Note
 For security reasons, the following are **not included** in this repository:
 - Google Apps Script Web App URL
 - Spreadsheet IDs
 - Backend source code
+- 📌 This project is intended for learning and portfolio purposes.
+- Unauthorized commercial use is discouraged.
 
 To run this project:
 1. Create a Google Sheet
