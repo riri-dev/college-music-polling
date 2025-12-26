@@ -18,12 +18,14 @@ their top songs of the year and celebrate music together 🎧✨
 
 ## 📸 Project Preview
 
-### Homepage
-![Homepage](assets/screenshots/homepage.png)
-### Countdown Timer
-![Countdown](assets/screenshots/countdown.png)
+### Homepage & Countdown Timer
+![Homepage-CountDown](<img width="1891" height="778" alt="poll-homepage countdown2" src="https://github.com/user-attachments/assets/2dbe2c0a-2865-4c8c-b7e6-1d40d0457132" />)
+
+### Polling Form
+![Form](<img width="1890" height="855" alt="poll-form" src="https://github.com/user-attachments/assets/ddd57abd-7a9d-49a8-80e2-17b2e98bae41" />)
+
 ### 3D Song Carousel
-![Carousel](assets/screenshots/carousel.png)
+![Carousel](<img width="1883" height="832" alt="image" src="https://github.com/user-attachments/assets/75a01682-98ac-4b76-836d-07bd1b9270c5" />)
 
 ## 🛠 Tech Stack
 - HTML, CSS, JavaScript
