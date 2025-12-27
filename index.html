@@ -25,7 +25,7 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      animation: confetti-burst 2.5s ease-out forwards;
+      animation: confetti-burst 3.0s ease-out forwards;
     }
 
     @keyframes confetti-burst {
@@ -266,6 +266,13 @@
       z-index: 5;
     }
 
+    /* ✅ MOBILE SUPPORT — arrows always visible */
+    @media (hover: none) {
+      .carousel-arrow {
+        opacity: 1;
+      }
+    }
+
     .song-card.mobile-active .image-wrapper::after {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
@@ -318,25 +325,124 @@
       line-height: 1.4;
     }
 
+    /*----CREDIT LINE----*/
+    .credit-line {
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin-bottom: -130px;
+      margin-top: -20px;
+    }
+
+    /* ----FOOTER----- */
     footer {
       text-align: center;
-      padding: 40px 0 20px;
-      font-size: 0.85rem;
+      padding: 20px 0 20px;
+      font-size: 0.75rem;
       opacity: 0.7;
     }
 
-    .credit-line {
-      text-align: center;
-      font-size: 0.75rem;
-      opacity: 0.6;
-      margin-bottom: 20px;
+    /* Container */
+    .dropdown-container {
+      position: relative;
+      display: inline-block;
     }
+
+    /* Main button */
+    .main-btn {
+      position: relative;
+      padding: 20px 50px;
+      border-radius: 32px;   
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      background: linear-gradient(120deg, #ffcc70, #ff8177, #6ee7ff);
+      color: #000;
+      overflow: hidden;
+    }
+
+    /* Text layers */
+    .main-btn span {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .label-default {
+      opacity: 0.8;
+        transform: translateY(0);
+  }
+
+    .label-hover {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+
+    /* On hover → swap text */
+    .dropdown-container:hover .label-default {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.dropdown-container:hover .label-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+    /* Dropdown */
+    .dropdown-menu {
+      position: absolute;
+      bottom: 80%;              /* 👈 opens ABOVE */
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: linear-gradient(120deg, #edc881, #8c5d59, #7cbbc7);
+      backdrop-filter: blur(10px);
+      border-radius: 14px;
+      padding: 5px 0;
+      min-width: 120px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Links inside dropdown */
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 0.8rem;
+      transition: background 0.25s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background: rgba(61, 21, 21, 0.15);
+    }
+
+    /* Show dropdown on hover */
+    .dropdown-container:hover .dropdown-menu {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
   </style>
 </head>
 <body>
 
   <div class="header-image">
-    <img src="https://res.cloudinary.com/dubenitfi/image/upload/logo_nnnnpc.jpg" alt="VMTW Logo">
+    <a href="https://www.vmtw.in" target="_blank"><img src="https://res.cloudinary.com/dubenitfi/image/upload/logo_nnnnpc.jpg" alt="VMTW Logo"></a>
   </div>
 
   <div class="catchy-line">🎧 Songs that stayed rent-free in the hearts of Vignan girls — 2025</div><br>
@@ -377,7 +483,7 @@
         <!-- 1. Good Goodbye -->
         <a href="https://youtu.be/Qe8fa4b5xNU?si=MeRI12SZ1KphwXbD" target="_blank" rel="noopener noreferrer" class="song-link">
           <div class="song-card">
-            <div class="image-wrapper"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2YGqtT92TeyIVQ98BnabVTKNpyRSMSnFRMg&s"></div>
+            <div class="image-wrapper"><img src="https://i.ytimg.com/vi/H1qCNgRjBHU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDzyWlXGFi4_iZEI86vDyiORm4kmA"></div>
             <div class="song-meta">Good Goodbye<br>Hwasa<br>Korean</div>
           </div>
         </a>
@@ -593,207 +699,216 @@
         </a>
         
       </div>
-    </div>
+    </div><br>
   </div>
 
 
-  <div class="credit-line">crafted with ♡ for VMTW</div>
-  <footer><a href="https://github.com/riri-dev" target="_blank">@riri-dev</a></footer>
+  
+  <footer>
+    <div class="credit-line">crafted with ♡ for VMTW<br></div><br>
+    <div class="dropdown-container">
+      <button class="main-btn">
+        <span class="label-default">@riri-dev</span>
+        <span class="label-hover">Connect</span>
+      </button>
+      <div class="dropdown-menu">
+        <a href="https://www.linkedin.com/in/lahari-pedada" target="_blank">
+        <b>LinkedIn</b>
+        </a>
+        <a href="https://github.com/riri-dev" target="_blank">
+          <b>GitHub</b>
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <script>
 
     // ================= GOOGLE SHEETS INTEGRATION =================
     // 🔴 PASTE YOUR *WEB APP URL* HERE (not Deployment ID)
-    const scriptURL = '2025_MUSIC_WRAPPER_WEB_APP_URL';
+    // ================= CONFIGURATION =================
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz6H_IDs_1io9zufTNC9_TiNMmWTzDyK7ut4wJVWZn_mXIu2oVMMsoHQfJ6LnmxHdPdpw/exec';
 
+    // ================= DROPDOWN MENU =================
+    const btn = document.querySelector('.main-btn');
+    const menu = document.querySelector('.dropdown-menu');
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('open');
+    });
+    document.addEventListener('click', () => menu.classList.remove('open'));
 
+    // ================= CONFETTI EFFECT =================
     function launchConfetti() {
-      const colors = ['#ffcc70','#ff8177','#6ee7ff','#ffffff'];
-      for (let i = 0; i < 50; i++) {
-        const c = document.createElement('div');
-        c.className = 'confetti';
-        const fromLeft = Math.random() < 0.5;
-        c.style.left = fromLeft ? '-10px' : '100vw';
-        c.style.top = '50%';
-        c.style.background = colors[Math.floor(Math.random() * colors.length)];
-        c.style.setProperty('--dx', (fromLeft ? 500 : -500) + Math.random()*200 + 'px');
-        c.style.setProperty('--dy', (-200 + Math.random()*400) + 'px');
-        document.body.appendChild(c);
-        setTimeout(() => c.remove(), 2600);
-      }
+        const colors = ['#ffcc70', '#ff8177', '#6ee7ff', '#ffffff'];
+        for (let i = 0; i < 50; i++) {
+            const c = document.createElement('div');
+            c.className = 'confetti';
+            const fromLeft = Math.random() < 0.5;
+            c.style.left = fromLeft ? '-10px' : '100vw';
+            c.style.top = '50%';
+            c.style.background = colors[Math.floor(Math.random() * colors.length)];
+            c.style.setProperty('--dx', (fromLeft ? 500 : -500) + Math.random() * 200 + 'px');
+            c.style.setProperty('--dy', (-200 + Math.random() * 400) + 'px');
+            document.body.appendChild(c);
+            setTimeout(() => c.remove(), 2600);
+        }
     }
 
+    // ================= TIMER LOGIC =================
     const timerEl = document.getElementById('timer');
     const clockWrapper = document.getElementById('clockWrapper');
     const target = new Date('2026-01-01T00:00:00');
 
     function updateCountdown() {
-      const diff = target - Date.now();
-      if (diff <= 0) {
-        timerEl.textContent = '🎉 Happy New Year 2026!';
-        return;
-      }
-      const d = Math.floor(diff / 86400000);
-      const h = Math.floor(diff / 3600000) % 24;
-      const m = Math.floor(diff / 60000) % 60;
-      const s = Math.floor(diff / 1000) % 60;
-      timerEl.textContent = `${d}d ${h}h ${m}m ${s}s`;
+        const diff = target - Date.now();
+        if (diff <= 0) {
+            timerEl.textContent = '🎉 Happy New Year 2026!';
+            return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor(diff / 3600000) % 24;
+        const m = Math.floor(diff / 60000) % 60;
+        const s = Math.floor(diff / 1000) % 60;
+        timerEl.textContent = `${d}d ${h}h ${m}m ${s}s`;
     }
-
+    setInterval(updateCountdown, 1000);
     updateCountdown();
 
-    // sync clock zoom with countdown hover
     timerEl.addEventListener('mouseenter', () => {
-      clockWrapper.style.transform = 'scale(1.05)';
+        clockWrapper.style.transform = 'scale(1.05)';
+        launchConfetti();
     });
-    timerEl.addEventListener('mouseleave', () => {
-      clockWrapper.style.transform = 'scale(1)';
-    });
-    setInterval(updateCountdown, 1000);
+    timerEl.addEventListener('mouseleave', () => clockWrapper.style.transform = 'scale(1)');
 
-    // ================= REAL RESPONSE COUNT =================
-
+    // ================= STATS COUNTER =================
     const statsEl = document.getElementById('stats');
-
     function fetchLiveCount() {
-      fetch(scriptURL + '?stats=true') // SAME Web App URL
-        .then(res => res.json())
-        .then(data => {
-          if (typeof data.count === 'number') {
-            statsEl.textContent =
-              `${data.count} students have already polled their favourite songs`;
-          }
-        })
-        .catch(err => console.error('Count fetch failed', err));
+        fetch(scriptURL + '?stats=true')
+            .then(res => res.json())
+            .then(data => {
+                if (typeof data.count === 'number') {
+                    statsEl.textContent = `${data.count} students have already polled their favourite songs`;
+                }
+            })
+            .catch(err => console.error('Count fetch failed', err));
     }
-
-    // initial load
     fetchLiveCount();
-
-    // refresh count every 15 seconds
     setInterval(fetchLiveCount, 15000);
 
-    // safety check
-    console.assert(statsEl instanceof HTMLElement, '❌ Stats element missing');
-
-
+    // ================= CAROUSEL LOGIC =================
     const carousel = document.getElementById('carousel');
     const wrapper = document.getElementById('carouselWrapper');
     let offset = 0;
     let isPaused = false;
+    const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     Array.from(carousel.children).forEach(card => carousel.appendChild(card.cloneNode(true)));
 
     function centerFirstCard() {
-      const first = carousel.children[0];
-      const wrapperCenter = wrapper.offsetWidth / 2;
-      const cardCenter = first.offsetLeft + first.offsetWidth / 2;
-      offset = wrapperCenter - cardCenter;
-      carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
+        const first = carousel.children[0];
+        offset = (wrapper.offsetWidth / 2) - (first.offsetLeft + first.offsetWidth / 2);
+        carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
     }
 
     function autoScroll() {
-      if (!isPaused) {
-        offset -= 1.056; /* +10% faster carousel */ /* 20% faster carousel */
-        if (Math.abs(offset) > carousel.scrollWidth / 2) offset = 0;
-        carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
-      }
-      requestAnimationFrame(autoScroll);
+        if (!isPaused) {
+            offset -= 1.056;
+            if (Math.abs(offset) > carousel.scrollWidth / 2) offset = 0;
+            carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
+        }
+        requestAnimationFrame(autoScroll);
     }
-
-    document.getElementById('arrowLeft').onclick = () => { offset += 260; };
-    document.getElementById('arrowRight').onclick = () => { offset -= 260; };
-
-    // pause carousel ONLY on desktop hover
-    const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     if (isDesktop) {
-      wrapper.addEventListener('mouseenter', () => isPaused = true);
-      wrapper.addEventListener('mouseleave', () => isPaused = false);
-    }
-
-    // mobile: tap-to-activate effects
-    if (!isDesktop) {
-      document.querySelectorAll('.song-card').forEach(card => {
-        card.addEventListener('click', () => {
-          card.classList.toggle('mobile-active');
+        wrapper.addEventListener('mouseenter', () => isPaused = true);
+        wrapper.addEventListener('mouseleave', () => isPaused = false);
+    } else {
+        document.querySelectorAll('.song-card').forEach(card => {
+            card.addEventListener('click', () => card.classList.toggle('mobile-active'));
         });
-      });
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      setTimeout(launchConfetti, 300);
-      centerFirstCard();
-      setTimeout(() => requestAnimationFrame(autoScroll), 3000);
+    // Touch Support
+    let startX = 0;
+    wrapper.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; isPaused = true; });
+    wrapper.addEventListener('touchmove', (e) => {
+        const currentX = e.touches[0].clientX;
+        offset += (currentX - startX) * 0.9;
+        carousel.style.transform = `translate3d(${offset}px, 0, 0)`;
+        startX = currentX;
     });
-    
+    wrapper.addEventListener('touchend', () => isPaused = false);
+
+    // ================= FORM SUBMISSION (STABLE VERSION) =================
     const formEl = document.querySelector('form');
     const submitBtn = document.getElementById('submitBtn');
     const thankYouEl = document.getElementById('thankyou');
     const editFormEl = document.getElementById('editForm');
 
     submitBtn.addEventListener('click', () => {
-      const inputs = formEl.querySelectorAll('input');
+        const inputs = formEl.querySelectorAll('input');
+        const data = {
+            name: inputs[0].value.trim(),
+            rollNo: inputs[1].value.trim(),
+            email: inputs[2].value.trim(),
+            song1: inputs[3].value.trim(),
+            song2: inputs[4].value.trim(),
+            song3: inputs[5].value.trim(),
+            instrument: inputs[6].value.trim()
+        };
 
-      const payload = {
-        name: inputs[0].value.trim(),
-        rollNo: inputs[1].value.trim(),
-        email: inputs[2].value.trim(),
-        song1: inputs[3].value.trim(),
-        song2: inputs[4].value.trim(),
-        song3: inputs[5].value.trim(),
-        instrument: inputs[6].value.trim()
-      };
+        if (!data.name || !data.rollNo || !data.email) {
+            alert('⚠️ Please fill all required fields');
+            return;
+        }
 
-      // basic validation
-      if (!payload.name || !payload.rollNo || !payload.email) {
-        alert('⚠️ Please fill all required fields');
-        return;
-      }
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting...';
+        // Use URLSearchParams to avoid CORS issues
+        const params = new URLSearchParams(data);
 
-      fetch(scriptURL, {
-        method: 'POST',
-        body: JSON.stringify(payload),
-        headers: { 'Content-Type': 'application/json' }
-      })
+        fetch(scriptURL, {
+            method: 'POST',
+            body: params,
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        })
         .then(res => res.json())
-        .then(data => {
-          if (data.status === 'duplicate') {
-            alert('⚠️ This Roll Number is already submitted');
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Submit 🎶';
-          } else {
-            // success
-            formEl.querySelectorAll('input').forEach(i => i.disabled = true);
-            submitBtn.style.display = 'none';
-            thankYouEl.style.display = 'block';
-          }
+        .then(resData => {
+            if (resData.status === 'duplicate') {
+                alert('⚠️ This Roll Number has already submitted a response.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit 🎶';
+            } else {
+                formEl.querySelectorAll('input').forEach(i => i.disabled = true);
+                submitBtn.style.display = 'none';
+                thankYouEl.style.display = 'block';
+                launchConfetti();
+                fetchLiveCount(); // Update the count immediately
+            }
         })
         .catch(err => {
-          console.error('Submission error:', err);
-          alert('❌ Submission failed. Please try again.');
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Submit 🎶';
+            console.error('Submission error:', err);
+            alert('❌ Connection error. Please check your internet or try again later.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit 🎶';
         });
     });
 
-    // allow editing after submit
     editFormEl.addEventListener('click', () => {
-      formEl.querySelectorAll('input').forEach(i => i.disabled = false);
-      submitBtn.style.display = 'inline-block';
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit 🎶';
-      thankYouEl.style.display = 'none';
+        formEl.querySelectorAll('input').forEach(i => i.disabled = false);
+        submitBtn.style.display = 'inline-block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit 🎶';
+        thankYouEl.style.display = 'none';
     });
 
-    // ================= CONSOLE ASSERTS (DEBUG SAFETY) =================
-    
-    console.assert(timerEl instanceof HTMLElement, 'Timer missing');
-    console.assert(typeof launchConfetti === 'function', 'Confetti missing');
-    console.assert(carousel.children.length > 0, 'Carousel empty');
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(launchConfetti, 300);
+        centerFirstCard();
+        setTimeout(() => requestAnimationFrame(autoScroll), 3000);
+    });
   </script>
 </body>
 </html>
