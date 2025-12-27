@@ -35,21 +35,18 @@
 
     /* ================= LOGO ================= */
     .header-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px; /* Reduced for mobile */
-  padding: 0 10px;  /* Adds a little breathing room on the sides */
-  box-sizing: border-box;
-}
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
 
-.header-image img {
-  width: 100%;      /* Forces image to fit the screen width */
-  max-width: 1000px; /* Prevents it from getting too big on laptops */
-  height: auto;     /* Maintains the original shape (no squishing) */
-  object-fit: contain; 
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    .header-image img {
+      width: min(200%, 1500px);
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0,4);
+    }
 
 
     /* ================= TEXT ================= */
@@ -84,29 +81,14 @@
     }
 
     /* ================= TIMER ================= */
-    .hero { 
-      display: flex; 
-      justify-content: center;
-      margin: 4px 0;
-      gap: 10px; /* Space between numbers */
-      font-size: 1.8rem; /* Slightly smaller for mobile */
-      font-weight: bold;
-      flex-wrap: nowrap; /* Prevents stacking */ 
-    }/* Make it even smaller if the screen is tiny */
-    @media (max-width: 380px) {
-      #timer {
-        font-size: 1.4rem;
-        gap: 5px;
-      }
-    }
+    .hero { display: flex; justify-content: center; margin: 4px 0; }
+
     .clock-wrapper {
       display: flex;
       align-items: center;
       gap: 18px;
-      padding: 20px 10px; /* Reduces the height */
-      width: 90%; /* Ensures it doesn't touch the screen edges */
-      margin: 0 auto;
-      border-radius: 20px;
+      padding: 8px 28px;
+      border-radius: 40px;
       background: linear-gradient(135deg, rgba(255,204,112,0.15), rgba(110,231,255,0.12));
       backdrop-filter: blur(14px);
       box-shadow: 0 0 35px rgba(110,231,255,0.25);
